@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import "./App.css"
 
 function Todo({todo, index}) {
-  return <div className="todo">{todo.text}</div>
+  return <div style={{textDecoration: todo.isCompleted ? "line-through" : ""}} className="todo">{todo.text}</div>
 }
 
 function TodoForm({addTodo}) {
