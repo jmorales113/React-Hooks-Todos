@@ -15,6 +15,14 @@ function App() {
       isCompleted: false
     }
   ])
+
+  return (
+    <div className="app">
+      <div className="todo-list">
+      
+      </div>
+    </div>
+  )
 }
 
 export default App
