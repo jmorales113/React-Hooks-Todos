@@ -1,8 +1,14 @@
 import React, {useState} from "react"
 import "./App.css"
 
-function Todo({todo, index}) {
-  return <div style={{textDecoration: todo.isCompleted ? "line-through" : ""}} className="todo">{todo.text}</div>
+function Todo({todo, index, completeTodo}) {
+  return <div style={{textDecoration: todo.isCompleted ? "line-through" : ""}} 
+  className="todo">
+  {todo.text}
+  <div>
+    <button onClick={() => completeTodo(index)}>Complete</button>
+  </div>
+  </div>
 }
 
 function TodoForm({addTodo}) {
