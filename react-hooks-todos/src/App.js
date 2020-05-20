@@ -5,6 +5,22 @@ function Todo({todo, index}) {
   return <div className="todo">{todo.text}</div>
 }
 
+function TodoForm({addTodo}) {
+  const [value, setValue] = useState("")
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if(!value) return addTodo(value)
+    setValue("")
+  }
+
+  return (
+    <form onSumbit={handleSubmit}>
+    <input type="text" className="input" value={value} onChange={e => setValue(e.target.value)} />
+    </form>
+  )
+}
+
 function App() {
   const [todos, setTodos] = useState([
     {
